@@ -4,4 +4,3 @@
 .env.*
 !.env.example
 .claude/worktrees/
-.playwright-mcp/

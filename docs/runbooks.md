@@ -10,7 +10,7 @@ Every clone must arm the committed hooks once:
 git config core.hooksPath .githooks
 ```
 
-Once a stack/package manager is chosen, wire this into its install/bootstrap step (e.g. a `prepare`/`postinstall` script) so every clone is armed automatically. The `commit-msg` hook runs `scripts/check-docs-sync.sh --staged`, blocking commits whose code changes drift from their owning docs (see [docmap.yaml](docmap.yaml)); the escape hatch is a `docs-na: <reason>` commit-message trailer.
+Once a stack is chosen, wire this into whatever bootstrap step every clone already runs, so arming is automatic rather than remembered. The `commit-msg` hook runs `scripts/check-docs-sync.sh --staged`, blocking commits whose code changes drift from their owning docs (see [docmap.yaml](docmap.yaml)); the escape hatch is a `docs-na: <reason>` commit-message trailer.
 
 Bypass, as with any git hook: `git commit --no-verify`. CI re-runs the same script on every PR, so a bypass buys minutes, not immunity.
 

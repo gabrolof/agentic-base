@@ -1,6 +1,6 @@
 # Workspace guide template
 
-The shape every workspace (`apps/*`, `packages/*`, `services/*`) `AGENTS.md` follows. Copy it to `<workspace>/AGENTS.md` in the same commit that creates the workspace, add a sibling `CLAUDE.md` containing only `@AGENTS.md`, and add the workspace's glob to [docmap.yaml](docmap.yaml).
+The shape every workspace `AGENTS.md` follows — a workspace being whatever unit this project deploys or versions independently (a service, a library, an app; the directory layout is this project's own choice, not a given). Copy it to `<workspace>/AGENTS.md` in the same commit that creates the workspace, add a sibling `CLAUDE.md` containing only `@AGENTS.md`, and add the workspace's glob to [docmap.yaml](docmap.yaml).
 
 A workspace guide is the file an agent reads *while writing code in that workspace*. It is not a tutorial and not a changelog. Everything in it earns its line by preventing a specific mistake.
 

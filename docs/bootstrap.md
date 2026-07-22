@@ -20,7 +20,7 @@ This repo ships the agentic structure and nothing else: no stack, no framework, 
 ## 3. Wire the enforcement
 
 - [ ] `git init` (if needed), then `git config core.hooksPath .githooks`.
-- [ ] Once a package manager exists, move that config into its install step so every clone is armed automatically, and add a `docs:check` script that runs `./scripts/check-docs-sync.sh --worktree`.
+- [ ] Once the stack has a bootstrap step every clone runs, move that config into it so arming is automatic, and expose a short alias for `./scripts/check-docs-sync.sh --worktree`.
 - [ ] Confirm the CI workflow in [.github/workflows/docs-sync.yml](../.github/workflows/docs-sync.yml) matches the branch you actually use.
 - [ ] Confirm the Claude Code Stop hook in `.claude/settings.json` fires.
 - → *verify:* `./scripts/test-docs-sync.sh` passes, and a deliberate violation (touch a mapped code path, commit without its doc) is **blocked** by the commit hook.

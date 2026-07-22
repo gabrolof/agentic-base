@@ -1,6 +1,6 @@
 # AGENTS.md — <PROJECT>
 
-The hub for working in this repo. `CLAUDE.md` files are one-line includes of their sibling `AGENTS.md` — **AGENTS.md is always the canonical file; never edit a CLAUDE.md directly.** As workspaces (apps/packages/services) appear, each gets its own expert `AGENTS.md` with workspace-specific invariants and Do/DON'T lists; this file covers repo-level context and how to work.
+The hub for working in this repo. `CLAUDE.md` files are one-line includes of their sibling `AGENTS.md` — **AGENTS.md is always the canonical file; never edit a CLAUDE.md directly.** As workspaces appear — whatever this project deploys or versions independently — each gets its own expert `AGENTS.md` with workspace-specific invariants and Do/DON'T lists; this file covers repo-level context and how to work.
 
 New repo? Start at [docs/bootstrap.md](docs/bootstrap.md) — the checklist that turns this skeleton into a real project.
 
