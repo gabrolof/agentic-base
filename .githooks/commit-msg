@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Doc-sync gate: blocks commits whose staged code changes drift from their
+# owning docs (see docs/docmap.yaml). Escape hatch: a `docs-na: <reason>`
+# trailer in the commit message. Arm with: git config core.hooksPath .githooks
+# (wire that into the package manager's install step once one exists).
+exec "$(git rev-parse --show-toplevel)/scripts/check-docs-sync.sh" --staged "$1"

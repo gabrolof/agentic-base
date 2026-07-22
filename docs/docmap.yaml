@@ -1,0 +1,24 @@
+# docs/docmap.yaml — code paths → the docs that own them.
+# Consumed by scripts/check-docs-sync.sh (git commit-msg hook + Claude Code
+# Stop hook + CI). A commit changing code under a glob must touch at least one
+# of its mapped docs, or carry a "docs-na: <reason>" commit-message trailer.
+#
+# Format is deliberately flat so a tiny bash parser can read it:
+#   - exactly one `glob: [doc, doc]` per line
+#   - no nesting, no quoting, no trailing comments
+#   - EVERY matching glob applies (a change under a specific glob AND a
+#     catch-all must satisfy both)
+#
+# ADD AN ENTRY FOR EVERY NEW WORKSPACE, in the commit that creates it.
+# Order it specific → general, mirroring the examples below.
+#
+# Example shape once workspaces exist (delete these, don't adapt them blindly —
+# they name paths this repo does not have yet):
+#   apps/<app>/src/**:      [apps/<app>/AGENTS.md, docs/requirements/README.md]
+#   packages/<pkg>/src/**:  [packages/<pkg>/AGENTS.md]
+#   apps/**:                [docs/decisions/README.md, docs/requirements/README.md]
+#   packages/**:            [docs/decisions/README.md, docs/requirements/README.md]
+
+scripts/**: [docs/runbooks.md, AGENTS.md]
+.githooks/**: [AGENTS.md]
+.github/**: [docs/runbooks.md, AGENTS.md]

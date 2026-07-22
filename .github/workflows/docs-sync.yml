@@ -1,0 +1,29 @@
+# Server-side enforcement of the doc invariants in AGENTS.md § "Doc governance".
+# The same script runs locally as a git commit-msg hook and a Claude Code Stop
+# hook; this workflow makes the invariants binding even when local hooks are
+# unarmed or bypassed (--no-verify).
+name: docs-sync
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  docs-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check doc-sync invariants
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            ./scripts/check-docs-sync.sh --range "origin/${{ github.base_ref }}..HEAD"
+          else
+            ./scripts/check-docs-sync.sh --graph
+          fi
+
+      - name: Self-test the checker
+        run: ./scripts/test-docs-sync.sh

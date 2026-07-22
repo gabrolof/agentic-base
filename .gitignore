@@ -1,0 +1,7 @@
+# Add stack-specific entries when the stack is chosen (ADR 001).
+.DS_Store
+.env
+.env.*
+!.env.example
+.claude/worktrees/
+.playwright-mcp/

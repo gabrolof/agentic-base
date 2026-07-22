@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if grep -q '\"stop_hook_active\"[[:space:]]*:[[:space:]]*true' -; then exit 0; fi; \"$CLAUDE_PROJECT_DIR\"/scripts/check-docs-sync.sh --worktree"
+          }
+        ]
+      }
+    ]
+  }
+}
