@@ -28,7 +28,7 @@ This repo ships the agentic structure and nothing else: no stack, no framework, 
 ## 4. Fill the docmap as workspaces appear
 
 - [ ] Add a `glob: [docs]` line to [docmap.yaml](docmap.yaml) for each new workspace, specific → general.
-- [ ] Give each workspace an `AGENTS.md` from the [template](workspace-guide-template.md) plus a one-line `CLAUDE.md`.
+- [ ] Give each workspace an `AGENTS.md` from the [template](workspace-guide-template.md) plus a one-line `CLAUDE.md` — Testing / Confirming a change / Known sharp edges filled with the honest current state from day one (an explicit "zero tests, no runner wired" beats an omitted section).
 - [ ] Link each workspace guide from the doc map in [AGENTS.md](../AGENTS.md).
 - → *verify:* `./scripts/check-docs-sync.sh --worktree` passes and no source path falls outside every glob.
 
